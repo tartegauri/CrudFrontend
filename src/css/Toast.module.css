@@ -1,0 +1,10 @@
+.toast{
+  position:absolute;
+  top:10px;
+  left:10px;
+  background-color: white;
+  color:black;
+  font-weight:700;
+  font-size:large;
+  border-radius: 10px;
+}
