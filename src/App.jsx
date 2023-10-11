@@ -6,13 +6,12 @@ import Post from "./components/Post";
 import Update from "./components/Update";
 import Home from "./components/Home";
 import Root from "./components/Root";
-
+ 
 function App() {
  
   return (
     <>
-      <Router>
-      
+      <Router>      
        <Routes>
         <Route path = "/" element = {<Root/>}>
         <Route indexelement = {<Home/>}/>
