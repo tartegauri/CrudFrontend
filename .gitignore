@@ -39,6 +39,10 @@ bower_components
 build/Release
 
 # Dependency directories
+# node_modules he khup motha asta folder he kadhi apan takat nasto github var so he pan aahe ithe lihilela 
+# hi file kahi apan lihit nasto git hub desktop madhe selec karaycha node sathichi git ignore add kara mhannun magh apwap hi file banti 
+# aplyala already vite ni banvun dilaee
+# but server chya folder madhe select karav lagel
 node_modules/
 jspm_packages/
 
@@ -71,7 +75,8 @@ web_modules/
 
 # Yarn Integrity file
 .yarn-integrity
-
+# dotenv file kadhi apan takat nasto github var ti ithe lihileliee bagh 
+# aplyala jyapan files gitla disu nahi asa pahije aani ty github madhe kadhi website var jau nahi asa pahije tya apan ithe git ignore madhe lihit asto
 # dotenv environment variable files
 .env
 .env.development.local
