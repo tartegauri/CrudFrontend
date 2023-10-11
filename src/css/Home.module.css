@@ -5,3 +5,12 @@
   background-size: cover;
   background-position: center;
 }
+
+.content>a>button{
+  background-color: black;
+  color:white;
+  padding:10px;
+  font-weight: 600;
+  border-radius: 10px;
+
+}
