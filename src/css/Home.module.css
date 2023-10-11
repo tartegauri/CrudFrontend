@@ -1,8 +1,7 @@
 .content{
-  background-image: url("D:/CRUD/vite-project/src/css/crudbackground.png");
+  background-image: url("crudbackground.png");
   height : 100vh;
   width : 100%;
   background-size: cover;
   background-position: center;
 }
-

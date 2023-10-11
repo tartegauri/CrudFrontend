@@ -18,7 +18,7 @@ const Update = () => {
   const navigate = useNavigate();
 
   const fetchAUserData = async (id)=>{
-    const response = await fetch(`http://localhost:3006/users/getspecificuser/${id}`);
+    const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/users/getspecificuser/${id}`);
     const data = await response.json();
     console.log(data);
     setUserData(data[0]);
@@ -44,7 +44,7 @@ const Update = () => {
       return;
     }
 
-    const response = await fetch(`http://localhost:3006/users/patch/${id}`,{
+    const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/users/patch/${id}`,{
          method:"PATCH",
          headers:{
           'Content-type':'application/json',

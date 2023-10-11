@@ -42,7 +42,7 @@ const handleSubmit = async(e)=>{
     setMessage("Please Don't Leave any fiels empty",false);
     return;
   }try{
-    const response = await fetch("http://localhost:3006/users/post",{
+    const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/users/post`,{
       method:"POST",
       headers:{
         "Content-type":"application/json",

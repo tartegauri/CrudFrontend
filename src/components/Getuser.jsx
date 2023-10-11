@@ -9,7 +9,7 @@ const [message,setMessage] = useState('');
 
   const handleDelete = async (id)=>{
     try{
-      const response = await fetch(`http://localhost:3006/users/delete/${id}`,{
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/users/delete/${id}`,{
         method:"DELETE",
         headers:{
           "Content-type":"application/json",
@@ -35,7 +35,7 @@ const [message,setMessage] = useState('');
 
   const fetchData = async ()=>{
     try{
-      const response = await fetch('http://localhost:3006/users/get');
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/users/get`);
       if(!response.ok){
         throw new Error("response was not ok error fetching data");
       }

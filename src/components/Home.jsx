@@ -5,7 +5,7 @@ import styles from "../css/Home.module.css";
 const Home = () => {
   return (
     <div className={styles.content} >
-      
+      <Link to ='/getuser'><button>User List</button></Link>
     </div>
   
     

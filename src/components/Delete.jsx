@@ -8,7 +8,7 @@ const Delete = () => {
 
    const handleDelete = async (id)=>{
     try{
-      const response = await fetch(`http://localhost:3006/users/delete/${id}`,{
+      const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/users/delete/${id}`,{
         method:"DELETE",
         headers:{
           "Content-type":"application/json",
