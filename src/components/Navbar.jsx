@@ -9,7 +9,8 @@ const Navbar = () => {
       </div>
       <div>
         <Link to = '/'>HOME</Link>
-        <Link to = 'postuser'>CREATE PROFILE</Link>
+        <Link to = '/getuser'>ALL USERS</Link>
+        <Link to = '/postuser'>CREATE PROFILE</Link>
       </div>
     </div>
   )

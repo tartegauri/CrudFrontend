@@ -1,0 +1,60 @@
+.container > h1 {
+    color:var(--bgc-d);
+}
+.container{
+    background-color: var(--bgc);
+    width:100%;
+    height:100vh;
+    margin:0;
+    padding:0;
+    display: flex;
+    padding-top:50px;
+    justify-content: center;
+}
+.container > h4 {
+    position: absolute;
+    top:70px;
+    margin:0;
+    padding:0;
+    background-color: var(--bgc);
+}
+.container > form {
+    height:520px;
+    background-color: var(--bgc-d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding:30px;
+    border-radius: 10px;
+}
+.container > form > input {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: large;
+    width:250px;
+    border:2px solid var(--bgc);
+    margin: 5px 0;
+    background-color: var(--bgc);
+    color:var(--bgc-d);
+}
+.container > form > h1{
+    margin: 0;
+    padding: 0;
+}
+.container > form > button {
+    all:unset;
+    margin:10px 0;
+    padding:5px 10px;
+    font-weight: 700;
+    font-size: large;
+    border: 4px solid var(--bgc);
+    border-radius: 10px;
+    color: var(--bgc);
+    background-color: var(--bgc-d);
+}
+.container > form  > button:hover{
+    color:var(--bgc-d);
+    background-color: var(--bgc);
+}

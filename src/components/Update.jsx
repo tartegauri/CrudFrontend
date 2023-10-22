@@ -1,8 +1,8 @@
 import React , {useState,useEffect} from 'react';
 import {useParams,useNavigate} from "react-router-dom";
-
+import styles from "../css/Update.module.css";
 const Update = () => {
-
+  const [loading,setLoading] = useState(false);
   const [userData,setUserData] = useState({
     id:0,
     name:"",
@@ -18,10 +18,12 @@ const Update = () => {
   const navigate = useNavigate();
 
   const fetchAUserData = async (id)=>{
+    setLoading(true);
     const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/users/getspecificuser/${id}`);
     const data = await response.json();
     console.log(data);
     setUserData(data[0]);
+    setLoading(false);
   }
 
   useEffect(()=>{
@@ -43,7 +45,7 @@ const Update = () => {
       setMessage("Please dont leave any fields empty");
       return;
     }
-
+    setLoading(true);
     const response = await fetch(`${import.meta.env.VITE_SERVER_URL}/users/patch/${id}`,{
          method:"PATCH",
          headers:{
@@ -54,6 +56,11 @@ const Update = () => {
     if(response.ok){
       const data = await response.json();
       setMessage(data.message);
+      setTimeout(()=>{
+        setMessage("")
+      },2000);
+      setLoading(false);
+      navigate("/getuser");
      console.log("done")
     }else{
       setMessage(data.message);
@@ -61,18 +68,11 @@ const Update = () => {
   };
 
 
-  return (
-    <div>
+  return (<>
+     {loading ?<div className={styles.container}><h1 className={styles.loading}>Loading...</h1></div> :<div className={styles.container}>
      <h4>{message}</h4>
      <form>
-
-     <label>Enter Id</label>
-        <input
-        onChange={handleChange}
-        type = "number"
-        name="id"
-        value={userData.id}/>
-     
+      <h1>Edit User</h1>
       <label>NAME</label>
         <input
         onChange={handleChange}
@@ -123,8 +123,8 @@ const Update = () => {
          />
      
      <button type="submit" onClick={handleSubmit}>UPDATE</button>
-     </form>
-    </div>
+     </form></div>}
+     </>
   )
 }
 
