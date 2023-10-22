@@ -1,16 +1,143 @@
-.content{
-  background-image: url("crudbackground.png");
-  height : 100vh;
-  width : 100%;
-  background-size: cover;
-  background-position: center;
+.container{
+    width:100%;
+    min-height: 100vh;
+    background-color:var(--bgc);
+    height:calc(100vh - 64px);
+    display: flex;
+    justify-content:space-evenly;
+    padding-top: 20px;
+}
+.container > div:nth-child(1) {
+    height:80%;
+    width:20%;
+    background: url("https://img.freepik.com/free-vector/appointment-booking-design_23-2148557730.jpg");
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 0 10%;
+}
+.heading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bgc);
+    margin:0;
+    padding:0;
+}
+.heading >  h1::first-letter {
+    font-size: 70px;
+    font-weight: 700;
+    background: linear-gradient(45deg,white ,var(--bgc-d) 50%);
+    background-clip: text;
+    color:transparent;
+    -webkit-background-clip: text; 
+}
+.heading >   h1 {
+    font-weight: 500;
+    background: linear-gradient(45deg,white 10% ,var(--bgc-d) 50%);
+    background-clip: text;
+    color:transparent;
+    -webkit-background-clip: text; 
+}
+.container > div:nth-child(2){
+    width:40%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.container > div:nth-child(2) > h1 {
+    height:10%;
+    color:var(--h);
+    margin:0px 0;
+}
+.container > div:nth-child(2) > p {
+    padding: 2px;
+    height:80%;
+    overflow-y: scroll;
+    color:var(--d);
+    font-weight:600;
+    font-size: large;
+}
+.container > div:nth-child(2) > p::-webkit-scrollbar{
+    width:5px;
+}
+.container > div:nth-child(2) > p:hover::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px var(--h);
+    border-radius: 10px;
+}
+.container > div:nth-child(2) > p:hover::-webkit-scrollbar-thumb {
+    background: var(--bgc-d);
+    border-radius: 20px;
+}
+.container > div:nth-child(2) > div{
+    height:10%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-.content>a>button{
-  background-color: black;
-  color:white;
-  padding:10px;
-  font-weight: 600;
-  border-radius: 10px;
-
+.container > div:nth-child(2) > div > button {
+    all:unset;
+    color:var(--h);
+    background-color: transparent;
+    border-radius: 10px;
+    font-weight: 700;
+    margin: 0 10px;
+    padding: 5px 20px;
+    border: 3px solid var(--bgc-d);
+}
+.container > div:nth-child(2) > div > button > a{
+    color:var(--bgc-d);
+    font-weight: 800;
+    font-size: larger;
+}
+.container > div:nth-child(2) > div > button:hover > a{
+    color:white;
+}
+.container > div:nth-child(2) > div > button:hover {
+    background-color: var(--bgc-d);
+}
+@media (width<470px){
+    .heading{
+        flex-direction: column;
+    }
+    .heading > h1 {
+        height:10px;
+    }
+    .container{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .container > div:nth-child(1) {
+        width:100%;
+        justify-content: flex-start;
+        align-items: flex-end;
+    }
+    .container > div:nth-child(1) > h1 {
+        width: 40%;
+    }
+    .container > div:nth-child(2){
+        width: 100%;
+    }
+    .container > div:nth-child(2) > h1 {
+        padding:5px 5px;
+        height:40px;
+    }
+    .container > div:nth-child(2) > p {
+        width: 100%;
+        height: fit-content;
+        overflow: visible;
+        padding:5px;
+    }
+    .container > div:nth-child(2) > div {
+        padding:10px 0px;
+        justify-content: space-around;
+    }
 }

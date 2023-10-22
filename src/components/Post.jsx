@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {useNavigate,Link} from "react-router-dom";
 import Toast from "./Toast.jsx";
-
+import styles from "../css/Post.module.css"
 const Post = () => {
 const navigate = useNavigate();
 //const [message,setMessage] = useState("");
@@ -52,6 +52,7 @@ const handleSubmit = async(e)=>{
     const data = await response.json();
     if(response.ok){
       setMessage("Data added",true)
+      navigate("/getuser")
     }else{
       setMessage("falied to post data",false)
     }
@@ -62,52 +63,52 @@ const handleSubmit = async(e)=>{
 };
 
   return (
-    <div>
+    <div className={styles.container}>
       <Toast message={msg} isPositive={positive}/>
       <form>
         <h2> CREATE YOUR PROFILE </h2>
-        <label>Name</label>
         <input 
+        placeholder='Name'
         type = "text"
         name = "name"
         value={formData.name}
         onChange={handleChange}
         />
 
-          <label>AGE</label>
         <input 
         type = "number"
         name = "age"
+        placeholder='Age'
         value={formData.age}
         onChange={handleChange}
         />
-
-        <label>Email</label>
+        
         <input 
+        placeholder="Email"
         type = "text"
         name = "email"
         value={formData.email}
         onChange={handleChange}
         />
 
-        <label>Tech skills</label>
         <input 
+        placeholder='Technical Skills'
         type = "text"
         name = "technical_skills"
         value={formData.technical_skills}
         onChange={handleChange}
         />
 
-        <label>Location</label>
         <input 
+        placeholder='Location'
         type = "text"
         name = "location"
         value={formData.location}
         onChange={handleChange}
         />
 
-        <label>About You</label>
         <input 
+        placeholder='About You'
         type = "text"
         name = "bio"
         value={formData.bio}
